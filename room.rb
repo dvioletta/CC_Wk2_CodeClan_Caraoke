@@ -27,4 +27,9 @@ attr_reader :suite, :price, :capacity, :guest, :playlist
     return @guest
   end
 
+  def room_capacity()
+    return @capacity
+  end
+
+
 end

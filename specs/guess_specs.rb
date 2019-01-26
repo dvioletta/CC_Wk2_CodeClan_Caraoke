@@ -26,4 +26,16 @@ class GuestTest < MiniTest::Test
       @guest_1.pay_for_suite(@room_1)
       assert_equal(20, @guest_1.wallet())
     end
+
+    def test_favourite_song
+      assert_equal("Rolling in the Deep", @guest_1.song())
+    end
+
+    def test_when_favourite_song_plays
+      result = @guest_1.favourite_song("Rolling in the Deep")
+      assert_equal(@guest_1, result)
+    end
+
+
+
   end

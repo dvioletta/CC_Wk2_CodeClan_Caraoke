@@ -14,4 +14,12 @@ attr_reader :name, :wallet, :song
     @wallet -= room.price
   end
 
+  def favourite_song()
+    return @song
+  end
+
+  def when_favourite_song_plays(song)
+    return @name.any?{ |song| name.song == song }
+  end
+
 end
