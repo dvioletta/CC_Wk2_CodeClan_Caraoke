@@ -41,24 +41,27 @@ class RoomTest < MiniTest::Test
       @room_1.add_guest(@guest_2)
       @room_1.add_guest(@guest_3)
       result = [@guest_1, @guest_2, @guest_3]
-      assert_equal(result, @room_1.guest )
+      assert_equal(result, @room_1.customers )
     end
 
     def test_remove_guest
       @room_1.add_guest(@guest_1)
       @room_1.add_guest(@guest_2)
       @room_1.remove_guest(@guest_1)
-      assert_equal(1, @room_1.guest.count)
+      assert_equal(1, @room_1.customers.count)
     end
 
     def test_room_capacity
-      @room_1.add_guest(@guest_1)
-      @room_1.add_guest(@guest_2)
-      @room_1.add_guest(@guest_3)
       assert_equal(3, @room_1.capacity)
     end
 
-    def test_room_capacity__over
+    def test_room_count
+      @room_1.add_guest(@guest_1)
+      @room_1.add_guest(@guest_2)
+      @room_1.add_guest(@guest_3)
+      @room_1.add_guest(@guest_4)
+      @customer = [@guest_1, @guest_2, @guest_3, @guest_4]
+      assert_equal(4, @room_1.capacity())
     end
 
 
